@@ -3,6 +3,10 @@ Epitech_Bistromathique
 
 First epitech "C - Prog Elem" project.
 
+## Subject
+[View subject (en)](http://dl.nathan.poirier.io/public/epitech/projects/B1/Bistromathique/bistro-en_2014.pdf)
+[Voir le sujet (fr)](http://dl.nathan.poirier.io/public/epitech/projects/B1/Bistromathique/bistromathique_2014.pdf)
+
 ## Result
 > Note : 42<br>
 Préliminaire (2 / 2) :<br>
