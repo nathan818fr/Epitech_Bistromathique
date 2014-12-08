@@ -5,7 +5,7 @@
 ## Login   <poirie_n@epitech.net>
 ## 
 ## Started on  Mon Nov  3 15:11:40 2014 Nathan Poirier
-## Last update Mon Dec  8 14:26:48 2014 Nathan Poirier
+## Last update Mon Dec  8 14:42:01 2014 Nathan Poirier
 ##
 
 SRCS	= main.c			\
@@ -37,7 +37,7 @@ NAME	= calc
 
 RM	= rm -f
 
-CC	= gcc
+CC	= gcc -Ofast
 
 MAKELIB	= make -C lib/my/
 
