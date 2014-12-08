@@ -1,0 +1,72 @@
+/*
+** strcalc_mul.c for calc the mul on str  in /home/greil_t/rendu/Bistromathique/strcalc
+** 
+** Made by timothy greil
+** Login   <greil_t@epitech.net>
+** 
+** Started on  Tue Oct 28 14:00:03 2014 timothy greil
+** Last update Sat Nov  8 12:48:45 2014 Nathan Poirier
+*/
+
+#include <bistro.h>
+
+void		strcalc_div_calc(t_strnb **nb1, t_strnb *tmp,
+				 t_strnb **result, t_def *def, int lv)
+{
+  t_strnb	*pres;
+  t_strnb	*r;
+  t_strnb	*unit;
+  int		e;
+
+  if (strcalc_strnb_cmp(*nb1, tmp, def) <= 0)
+    {
+      strcalc_strnb_baseup(tmp);
+      strcalc_div_calc(nb1, tmp, result, def, lv + 1);
+      strcalc_strnb_basedown(tmp);
+      unit = strcalc_create_strnb(lv);
+      unit->strlen = lv + 1;
+      unit->str[lv] = 1;
+      e = 1;
+      while (e)
+	{
+	  strcalc_strnb_updatelen((r = strcalc_sub(*nb1, tmp, def)));
+	  if (!r->is_neg)
+	    {
+	      pres = (*result);
+	      *result = strcalc_add(pres, unit, def);
+	      e = (strcalc_strnb_cmp(r, tmp, def) <= 0);
+	      *nb1 = r;
+	    }
+	  else
+	      e = 0;
+	}
+    }
+}
+
+t_strnb		*strcalc_div(t_strnb *nb1, t_strnb *nb2, t_def *def)
+{
+  t_strnb	*result;
+  t_strnb	*tmp;
+  char		is_neg;
+
+  if (strcalc_strnb_is_zero(nb2))
+    return (my_error(RUNTIME_ERROR_MSG, RUNTIME_ERROR_DIVZERO));
+  is_neg = (nb1->is_neg != nb2->is_neg);
+  nb1->is_neg = 0;
+  nb2->is_neg = 0;
+  if (strcalc_strnb_cmp(nb1, nb2, def) > 0)
+    {
+      if ((tmp = strcalc_create_strnb(0)) == NULL)
+	return (NULL);
+      tmp->str[0] = def->base[0];
+      tmp->str[1] = '\0';
+      return (tmp);
+    }
+  result = strcalc_create_strnb(nb1->strlen);
+  tmp = strcalc_create_strnb(nb1->strlen + 2);
+  strcalc_strnb_cpy(nb2, tmp);
+  strcalc_div_calc(&nb1, tmp, &result, def, 0);
+  strcalc_strnb_free(tmp);
+  result->is_neg = is_neg;
+  return (result);
+}
