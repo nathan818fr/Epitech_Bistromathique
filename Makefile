@@ -5,7 +5,7 @@
 ## Login   <poirie_n@epitech.net>
 ## 
 ## Started on  Mon Nov  3 15:11:40 2014 Nathan Poirier
-## Last update Mon Dec  8 14:42:01 2014 Nathan Poirier
+## Last update Mon Dec  8 14:45:51 2014 Nathan Poirier
 ##
 
 SRCS	= main.c			\
@@ -45,9 +45,7 @@ LIB	= lib/my/libmy.a
 
 CFLAGS	= -W -Wall -Wextra -Werror
 CFLAGS	+= -ansi -pedantic
-CFLAGS	+= -Isrc/bistro/include/	\
-	   -Isrc/strcalc/include/	\
-	   -Isrc/utils/include/		\
+CFLAGS	+= -Iinclude/		\
 	   -Ilib/my/include/
 CFLAGS	+= $(LIBS)
 
