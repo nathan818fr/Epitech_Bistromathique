@@ -1,4 +1,4 @@
-Epitech_Bistromathique
+Epitech Bistromathique
 ======================
 
 First epitech "C - Prog Elem" project.
