@@ -1,5 +1,5 @@
-Epitech Bistromathique
-======================
+Epitech Bistromathique / Bistro-matic
+=====================================
 
 First epitech "C - Prog Elem" project.
 
