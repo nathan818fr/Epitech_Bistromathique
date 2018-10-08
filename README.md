@@ -35,3 +35,13 @@ Norme OK.<br>
 <br>
 Test de performances :<br>
 +32
+
+## Authors
+
+**v2014**
+- [Nathan Poirier](https://github.com/nathan818fr)
+- Timothy Greil
+
+**v2017**
+- [Julien Sol](https://github.com/JulienSol)
+- [Nathan Poirier](https://github.com/nathan818fr)
